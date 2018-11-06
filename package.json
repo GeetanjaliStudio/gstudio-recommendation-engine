@@ -1,0 +1,44 @@
+{
+  "name": "sedaily-recommendation-engine",
+  "version": "1.0.0",
+  "description": "Recommendation system for content based on user's history",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "start": "gulp serve",
+    "lint": "esw *.js server config --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --compilers js:babel-core/register tests/server --recursive",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register tests --recursive",
+    "test:check-coverage": "npm run test:coverage && istanbul check-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftwareEngineeringDaily/sedaily-recommendation-engine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoftwareEngineeringDaily/sedaily-recommendation-engine/issues"
+  },
+  "homepage": "https://github.com/SoftwareEngineeringDaily/sedaily-recommendation-engine#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "del": "^3.0.0",
+    "express": "^4.16.4",
+    "http-status": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "dotenv": "^6.1.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-nodemon": "^2.4.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "joi": "^14.0.4"
+  }
+}

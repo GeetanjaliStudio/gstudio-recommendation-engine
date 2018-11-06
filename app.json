@@ -1,0 +1,20 @@
+{
+  "name": "sedaily-recommend",
+  "scripts": {
+  },
+  "env": {
+    "MONGO_HOST": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

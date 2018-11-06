@@ -1,0 +1,9 @@
+version: '2'
+services:
+  sedaily-recommend:
+    build:
+      context: .
+    container_name: sedaily-recommend
+    # Set environment variables from this file
+    env_file:
+      - .env
