@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp",
+    "dev": "gulp serve",
     "heroku-postbuild": "gulp deployBuild",
     "lint": "esw *.js server config --color",
     "lint:watch": "npm run lint -- --watch",
-    "start": "gulp serve",
+    "start": "node dist/index.js",
     "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --compilers js:babel-core/register tests/server --recursive",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register tests --recursive",
