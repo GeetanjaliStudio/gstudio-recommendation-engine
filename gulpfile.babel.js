@@ -8,6 +8,7 @@ const plugins = gulpLoadPlugins();
 const paths = {
   js: ['./**/*.js', '!dist/**', '!node_modules/**', '!coverage/**', '!./server/docs/**'],
   nonJs: ['./package.json', './.gitignore', './.env', './server/**/static/**'],
+  prodNonJs: ['./package.json', './server/**/static/**'],
   docs: ['./server/docs/**'],
   tests: './server/tests/*.js'
 };
@@ -18,6 +19,12 @@ function clean() {
 
 function copy() {
   return gulp.src(paths.nonJs)
+    .pipe(plugins.newer('dist'))
+    .pipe(gulp.dest('dist'))
+}
+
+function deployCopy() {
+  return gulp.src(paths.prodNonJs)
     .pipe(plugins.newer('dist'))
     .pipe(gulp.dest('dist'))
 }
@@ -48,6 +55,9 @@ function nodemon(done) {
 
 gulp.task('clean', clean);
 gulp.task('copy', copy);
+gulp.task('deployCopy', deployCopy);
 gulp.task('babelTask', babelTask);
 gulp.task('serve', gulp.series(clean, copy, nodemon));
 gulp.task('default', gulp.series(clean, copy, babelTask));
+gulp.task('deployBuild', gulp.series(clean, deployCopy, babelTask));
+
