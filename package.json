@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "gulp deployBuild",
     "lint": "esw *.js server config --color",
     "lint:watch": "npm run lint -- --watch",
     "start": "gulp serve",
