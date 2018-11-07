@@ -57,7 +57,7 @@ gulp.task('clean', clean);
 gulp.task('copy', copy);
 gulp.task('deployCopy', deployCopy);
 gulp.task('babelTask', babelTask);
-gulp.task('serve', gulp.series(clean, copy, nodemon));
+gulp.task('serve', gulp.series(clean, copy, babelTask, nodemon));
 gulp.task('default', gulp.series(clean, copy, babelTask));
 gulp.task('deployBuild', gulp.series(clean, deployCopy, babelTask));
 

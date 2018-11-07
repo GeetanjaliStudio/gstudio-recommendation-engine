@@ -10,6 +10,7 @@
     "lint": "esw *.js server config --color",
     "lint:watch": "npm run lint -- --watch",
     "start": "node dist/index.js",
+    "start.ingest": "node dist/index.js --ingest",
     "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --compilers js:babel-core/register tests/server --recursive",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register tests --recursive",
@@ -30,8 +31,9 @@
     "del": "^3.0.0",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "joi": "^14.0.4",
-    "http-status": "^1.2.0"
+    "hacker-news-api": "^2.0.0",
+    "http-status": "^1.2.0",
+    "joi": "^14.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
