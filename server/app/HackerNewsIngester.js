@@ -3,9 +3,8 @@ import ContentIngester from './ContentIngester';
 import hn from 'hacker-news-api';
 
 class HackerNewsIngester extends ContentIngester {
-  constructor(client) {
+  constructor() {
     super();
-    this.client = client || "";
   }
 
   getContent() {

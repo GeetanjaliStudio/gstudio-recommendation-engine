@@ -1,4 +1,4 @@
-import HackerNewsIngester from '../feed/HackerNewsIngester';
+import HackerNewsIngester from '../app/HackerNewsIngester';
 
 const hackerNewsIngester = new HackerNewsIngester();
 
