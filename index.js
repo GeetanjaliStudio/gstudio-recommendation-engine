@@ -1,8 +1,7 @@
 // config should be imported before importing any other file
 import config from './config/config';
 import app from './config/express';
-import HackerNewsIngester from './server/app/HackerNewsIngester';
-
+import SEDTranscriptIngester from './server/app/SEDTranscriptIngester';
 
 function initServer() {
 	// module.parent check is required to support mocha watch
@@ -16,13 +15,8 @@ function initServer() {
 }
 
 function ingest() {
-	const hackerNewsIngester = new HackerNewsIngester();
-	hackerNewsIngester.getContent().then(data => {
-		console.log(data);
-	})
-	.catch(err => {
-		console.log(err)
-	})
+	const sedTranscriptIngester = new SEDTranscriptIngester();
+	sedTranscriptIngester.getContent()
 }
 
 switch(process.argv[2]) {

@@ -33,7 +33,8 @@
     "express": "^4.16.4",
     "hacker-news-api": "^2.0.0",
     "http-status": "^1.2.0",
-    "joi": "^14.0.4"
+    "joi": "^14.0.4",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
